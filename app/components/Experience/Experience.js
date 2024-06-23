@@ -6,7 +6,6 @@ import Image from 'next/image';
 
 export default function Experience() {
   const imagdata = [simpana, vendify, pace];
-  console.log(experienceData);
   return (
     <div className="h-full">
       <h1 className="mt-20 text-center text-5xl font-extralight text-gray-text">
