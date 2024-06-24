@@ -1,9 +1,9 @@
-import About from './components/About/About';
-import Experience from './components/Experience/Experience';
-import GetInTouch from './components/Footer/GetInTouch';
-import Leadership from './components/LeaderShip/LeaderShip';
-import Project from './components/Projects/Projects';
-
+import About from '@/app/components/About/About';
+import Experience from '@/app/components/Experience/Experience';
+import GetInTouch from '@/app/components/Footer/GetInTouch';
+import Leadership from '@/app/components/LeaderShip/LeaderShip';
+import Project from '@/app/components/Projects/Projects';
+import Skills from '@/app/components/Skill/Skills';
 export default function Home() {
   return (
     <main>
@@ -11,6 +11,7 @@ export default function Home() {
       <Experience />
       <Project />
       <Leadership />
+      <Skills />
       <GetInTouch />
     </main>
   );
