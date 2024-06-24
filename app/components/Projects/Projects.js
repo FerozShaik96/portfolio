@@ -1,26 +1,24 @@
-import { FaGithub } from "react-icons/fa";
-import ProjectCard from "@/app/components/Projects/ProjectCard";
+import { FaGithub } from 'react-icons/fa';
+import { ProjectData, NavData } from '@/app/Utilities/data';
+import ProjectCard from '@/app/components/Projects/ProjectCard';
 
 export default function Project() {
-  const projects = [
-    { id: 1, FgIcon: FaGithub },
-    { id: 2, FgIcon: FaGithub },
-    { id: 3, FgIcon: FaGithub },
-    { id: 4, FgIcon: FaGithub },
-  ];
-
+  const FgIcon = FaGithub;
   return (
-    <div className="bg-gray-back p-5 md:p-10 lg:20  md:pt-0 lg:pt-0pt-0 min-h-screen">
-      <h1 className="text-5xl text-slate-700  py-20  font-extralight text-center">
+    <section
+      id={NavData.Projects.page}
+      className="lg:20 lg:pt-0pt-0 min-h-screen bg-gray-back p-5 md:p-10 md:pt-0"
+    >
+      <h1 className="py-20 text-center text-5xl font-extralight text-slate-700">
         Recent Projects
       </h1>
-      <div className="grid grid-cols-1   md:grid-cols-2 gap-5">
-        {projects.map((project) => (
-          <div key={project.id} className="w-full sm:w-full drop-shadow-2xl">
-            <ProjectCard key={project.id} FgIcon={project.FgIcon} />
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {ProjectData.map((project) => (
+          <div key={project.id} className="w-full drop-shadow-2xl sm:w-full">
+            <ProjectCard key={project.id} project={project} FgIcon={FgIcon} />
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

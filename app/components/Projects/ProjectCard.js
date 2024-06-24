@@ -1,63 +1,84 @@
-import { data } from "@/app/Utilities/data";
+import { data } from '@/app/Utilities/data';
 
-export default function ProjectCard({ FgIcon }) {
+export default function ProjectCard({ project, FgIcon }) {
   return (
-    <div className="w-full p-4 md:p-7 bg-white border-gray-300 border rounded-md shadow-md overflow-hidden transition duration-300 ease-in-out hover:transform hover:scale-102 hover:shadow-lg">
+    <div className="hover:scale-102 w-full overflow-hidden rounded-md border border-gray-300 bg-white p-4 shadow-md transition duration-300 ease-in-out hover:transform hover:shadow-lg md:p-7">
       <header>
-        <CardHeader FgIcon={FgIcon} />
+        <CardHeader projectData={project} FgIcon={FgIcon} />
       </header>
       <hr />
       <main>
-        <Languages data={data} />
+        <Languages projectLan={project} />
       </main>
       <footer>
-        <CardFooter FgIcon={FgIcon} />
+        <CardFooter ProjectDataUpdate={project} FgIcon={FgIcon} />
       </footer>
     </div>
   );
 }
 
-function CardHeader({ FgIcon }) {
+function CardHeader({ projectData, FgIcon }) {
   return (
     <>
-      <h3 className="text-md font-semibold text-gray-text">myportfolio</h3>
-      <div className="flex flex-col md:flex-row mt-3 mb-4 gap-3">
-        <div className="flex items-center justify-center md:justify-start border border-slate-500 py-2 px-3 rounded-md transition duration-300 ease-in-out hover:bg-gray-light text-slate-500 hover:text-white text-base w-full md:w-auto">
+      <h3 className="text-md font-semibold text-gray-text">
+        {projectData.projectName}
+      </h3>
+      <div className="mb-4 mt-3 flex flex-col gap-3 md:flex-row">
+        <a
+          href={projectData.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center rounded-md border border-slate-500 px-3 py-2 text-base text-slate-500 transition duration-300 ease-in-out hover:bg-gray-light hover:text-white md:w-auto md:justify-start"
+        >
           <FgIcon className="text-xl md:mr-2" />
           <p className="md:inline-block">Clone Project</p>
-        </div>
-        <div className="flex items-center justify-center md:justify-start border border-slate-500 py-2 px-3 rounded-md transition duration-300 ease-in-out hover:bg-gray-light text-slate-500 hover:text-white text-base w-full md:w-auto">
+        </a>
+        <a
+          href={projectData.repo}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center rounded-md border border-slate-500 px-3 py-2 text-base text-slate-500 transition duration-300 ease-in-out hover:bg-gray-light hover:text-white md:w-auto md:justify-start"
+        >
           <FgIcon className="text-xl md:mr-2" />
           <p className="md:inline-block">Repo</p>
-        </div>
+        </a>
       </div>
     </>
   );
 }
 
-function CardFooter({ FgIcon }) {
+function CardFooter({ ProjectDataUpdate, FgIcon }) {
   return (
-    <div className="flex mt-3 items-center text-sm text-gray-500 gap-5">
+    <div className="mt-3 flex items-center gap-5 text-sm text-gray-500">
       <div className="flex items-center gap-1">
         <FgIcon /> <span>Stars</span>
       </div>
-      <p>Updated on January 17, 2024</p>
+      <p>
+        Updated on <span className="me-1">{ProjectDataUpdate.monthUpdate}</span>
+        <span className="me-1">{ProjectDataUpdate.dateUpdate}</span>
+        <span>{ProjectDataUpdate.yearUpdate}</span>
+      </p>
     </div>
   );
 }
 
-function Languages({ data }) {
+function Languages({ projectLan }) {
+  const data = [
+    projectLan.Javascript ? { JavaScript: projectLan.Javascript } : '',
+    projectLan.CSS ? { CSS: projectLan.CSS } : '',
+    projectLan.HTML ? { HTML: projectLan.HTML } : '',
+  ].filter(Boolean);
   return (
-    <div className="mt-3 md:flex items-center gap-2">
+    <div className="mt-3 items-center gap-2 md:flex">
       <p className="text-sm text-gray-700">Languages:</p>
-      <div className="flex flex-wrap gap-3 mt-2 text-gray-700">
+      <div className="mt-2 flex flex-wrap gap-3 text-gray-700">
         {data.length !== 0 ? (
           data.map((item, index) => (
             <div key={index} className="flex flex-wrap gap-2">
               {Object.entries(item).map(([key, value]) => (
                 <a
                   key={key}
-                  className="text-xs bg-slate-100 p-1 rounded-md font-semibold"
+                  className="rounded-md bg-slate-100 p-1 text-xs font-semibold"
                 >
                   {key}: {value}
                 </a>

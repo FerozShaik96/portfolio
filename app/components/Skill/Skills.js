@@ -1,12 +1,16 @@
 'use client';
 import React from 'react';
+import { NavData } from '@/app/Utilities/data';
 import { useState } from 'react';
 import TechnicalSkills from './TechnicalSkills';
 import SoftSkills from './SoftSkills';
 function Skills() {
   const [activeTab, setActiveTab] = useState('TechnicalSkills');
   return (
-    <div className="flex h-full items-center justify-center py-12 md:pb-16 md:pt-20 lg:pb-20 lg:pt-24">
+    <section
+      id={NavData.Skills.page}
+      className="flex h-full items-center justify-center py-12 md:pb-16 md:pt-20 lg:pb-20 lg:pt-24"
+    >
       <div className="w-full md:w-[448px] lg:w-[775px]">
         <h1 className="mb-12 text-center text-5xl font-light text-gray-text">
           Skills
@@ -48,7 +52,7 @@ function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
