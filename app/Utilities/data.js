@@ -8,11 +8,54 @@ import imag7 from '@/public/img7.png';
 import imag8 from '@/public/img8.png';
 import imag9 from '@/public/img9.png';
 import imag10 from '@/public/img10.png';
+export const NavData = {
+  name: 'Feroz',
+  Projects: { lable: 'Project', page: 'projects' },
+  Resume: { lable: 'Resume', page: '' },
+  About: { lable: 'About', page: 'about' },
+  Skills: { lable: 'Skills', page: 'skills' },
+};
+export const ProjectData = [
+  {
+    projectName: 'MailBox-Clent',
+    repo: 'https://github.com/FerozShaik96/MailBox-Client',
+    dateUpdate: '17',
+    monthUpdate: 'Octobar',
+    yearUpdate: '2023',
+    Javascript: '51.7 %',
+    CSS: '33.7 %',
+    HTML: '17.7 %',
+  },
+  {
+    projectName: 'Expense Tracker',
+    repo: 'https://github.com/FerozShaik96/Expense-Tracker',
+    dateUpdate: '31',
+    monthUpdate: 'september',
+    yearUpdate: '2023',
+  },
+  {
+    projectName: 'Ecommers Tracker',
+    repo: 'https://github.com/FerozShaik96/Ecommers',
+    dateUpdate: '20',
+    monthUpdate: 'Augest',
+    yearUpdate: '2023',
+    Javascript: '49.7 %',
+    CSS: '30.7 %',
+    HTML: '27.7 %',
+  },
+  {
+    projectName: 'Restaurant App',
+    repo: 'https://github.com/FerozShaik96/Restaurant_App',
+    dateUpdate: '15',
+    monthUpdate: 'July',
+    yearUpdate: '2023',
+  },
+];
 export const AboutData = {
   title: 'About Me',
   size: 350,
   message:
-    "My name is Mohd Shahid Iqbal. I’m a post-graduate of 2020 from Jamia hamdard University at New Delhi with a degree in Masters of Computer Application . I'm most passionate about giving back to the community, and my goal is to pursue this passion within the field of software engineering. In my free time I like working on open source projects.",
+    'My name is Shaik Feroz. I’m a Under-graduate of 2019 from Rama Chandra College Of Engineering  at Eluru , Andhra Pradesh with a degree in Mechanical Engineering . Driven by a passion for challenge, I embarked on a self-directed coding journey, honing technical skills and a problem-solving approach.',
 };
 export const data = [
   { Javascript: '51.7 %' },
