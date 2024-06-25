@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { AboutData, NavData } from '@/app/Utilities/data';
-import Feroz from '@/public/Feroz.JPG';
+import Feroz from '@/public/Feroz.jpg';
 
 export default function About() {
   const { title, size, resume, message } = AboutData;
