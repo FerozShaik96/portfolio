@@ -1,31 +1,14 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BiMenu } from 'react-icons/bi';
 import { Link as ScrollLink } from 'react-scroll';
 import { NavData } from '@/app/Utilities/data';
-function Navigation() {
+function Navigation({ isTop }) {
   const [NavItem, showNavItem] = useState(false);
-  const [isTop, setIsTop] = useState(true);
-  useEffect(() => {
-    // Function to handle scroll event
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      // Determine if we are at the top of the page
-      setIsTop(currentScrollY === 0);
-    };
-
-    // Add scroll event listener when component mounts
-    window.addEventListener('scroll', handleScroll);
-
-    // Clean up event listener when component unmounts
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <header
-      className={`fixed top-0 z-10 w-full justify-between bg-white p-4 md:flex ${
-        isTop ? 'bg-white' : 'bg-gray-50/90'
+      className={`fixed top-0 z-10 w-full items-center justify-start gap-x-0 p-4 lg:flex lg:gap-x-2 ${
+        isTop ? 'bg-transparent' : 'bg-nav-Col/70'
       }`}
     >
       <div className="flex justify-between">
@@ -40,12 +23,12 @@ function Navigation() {
         </ScrollLink>
         <BiMenu
           size={30}
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => showNavItem((prevstate) => !prevstate)}
         />
       </div>
       <div
-        className={`${NavItem ? 'block' : 'hidden'} mr-8 md:block md:space-x-6`}
+        className={`${NavItem ? 'block' : 'hidden'} mr-8 lg:block lg:space-x-6`}
       >
         {Object.keys(NavData).map((item) => {
           if (item === 'name') return null;
@@ -54,7 +37,7 @@ function Navigation() {
               to={NavData[item].page}
               spy={true}
               smooth={true}
-              className="mt-3 block cursor-pointer md:mt-0 md:inline-block"
+              className="mt-3 block cursor-pointer lg:mt-0 lg:inline-block"
               key={NavData[item.lable]}
             >
               {NavData[item].lable}
