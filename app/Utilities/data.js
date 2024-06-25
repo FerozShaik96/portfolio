@@ -59,6 +59,8 @@ export const ProjectData = [
 ];
 export const AboutData = {
   title: 'About Me',
+  resume:
+    'https://drive.google.com/file/d/1sUNzDVpjNK5Kb-8yzZtvUVRbUX5I-jtj/view',
   size: 350,
   message:
     'My name is Shaik Feroz. I’m a Under-graduate of 2019 from Rama Chandra College Of Engineering  at Eluru , Andhra Pradesh with a degree in Mechanical Engineering . Driven by a passion for challenge, I embarked on a self-directed coding journey, honing technical skills and a problem-solving approach.',

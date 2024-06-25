@@ -3,7 +3,7 @@ import { AboutData, NavData } from '@/app/Utilities/data';
 import Feroz from '@/public/Feroz.JPG';
 
 export default function About() {
-  const { title, size, image, message } = AboutData;
+  const { title, size, resume, message } = AboutData;
 
   return (
     <section
@@ -27,7 +27,14 @@ export default function About() {
           <p className="mt-4 ps-1 text-base font-light text-gray-600 md:text-center lg:text-lg">
             {message}
           </p>
-          <a className="text-center">
+          <a
+            target="_blank"
+            href={resume}
+            rel="noreferrer noopener"
+            role="button"
+            aria-label="Resume/CV"
+            className="text-center"
+          >
             <button className="mt-6 rounded-md border border-slate-900 px-3 py-2 transition duration-300 ease-in-out hover:bg-zinc-900 hover:text-white">
               Resume
             </button>
