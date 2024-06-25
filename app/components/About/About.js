@@ -8,7 +8,7 @@ export default function About() {
   return (
     <section
       id={NavData.About.page}
-      className="min-h-full bg-gray-About p-12 md:p-28"
+      className="min-h-full bg-gray-About p-12 pt-20 md:p-28"
     >
       <div className="grid grid-cols-1 items-center lg:grid-cols-3">
         <div className="hidden lg:block">

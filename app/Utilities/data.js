@@ -8,8 +8,14 @@ import imag7 from '@/public/img7.png';
 import imag8 from '@/public/img8.png';
 import imag9 from '@/public/img9.png';
 import imag10 from '@/public/img10.png';
+import {
+  FaGithub,
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 export const NavData = {
-  name: 'Feroz',
+  name: { lable: 'Feroz', page: 'home' },
   Projects: { lable: 'Project', page: 'projects' },
   Resume: { lable: 'Resume', page: '' },
   About: { lable: 'About', page: 'about' },
@@ -57,11 +63,7 @@ export const AboutData = {
   message:
     'My name is Shaik Feroz. I’m a Under-graduate of 2019 from Rama Chandra College Of Engineering  at Eluru , Andhra Pradesh with a degree in Mechanical Engineering . Driven by a passion for challenge, I embarked on a self-directed coding journey, honing technical skills and a problem-solving approach.',
 };
-export const data = [
-  { Javascript: '51.7 %' },
-  { CSS: '33.7 %' },
-  { HTML: '17.7 %' },
-];
+
 export const experienceData = [
   {
     role: 'React Developer',
@@ -83,7 +85,7 @@ export const getInTouch = {
   heading: 'Get In Touch',
   message:
     "I'm currently looking for full-time React Developer/Frontend Developer opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
-  email: 'khansaif59@gmail.com',
+  email: 'ferozshaik1997@gmail.com',
 };
 export const imgData = [
   imag1,
@@ -123,4 +125,33 @@ export const skillsData = {
     { name: 'Organization', value: 70 },
     { name: 'Creativity', value: 90 },
   ],
+};
+export const mainBody = {
+  gradientColors: '#4484ce, #1ad7c0, #ff9b11, #9b59b6, #ff7f7f, #ecf0f1',
+  firstName: 'Feroz',
+  lastName: 'Shaik',
+  message: 'Passionate about changing the world with technology',
+  icons: [
+    {
+      lable: 'git',
+      iconName: <FaGithub size={45} />,
+      siteLink: 'https://github.com/FerozShaik96',
+    },
+    {
+      lable: 'facebook',
+      iconName: <FaFacebookSquare size={45} />,
+      siteLink: 'https://www.facebook.com/feroz.shaik.5895/',
+    },
+    {
+      lable: 'insta',
+      iconName: <FaInstagram size={45} />,
+      siteLink: 'https://www.instagram.com/feroz_shaikk/',
+    },
+    {
+      lable: 'linkedIn',
+      iconName: <FaLinkedin size={45} />,
+      siteLink: 'https://www.linkedin.com/in/ferozshaik-b29822190/',
+    },
+  ],
+  about: 'More about me',
 };

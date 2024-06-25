@@ -9,7 +9,7 @@ function Skills() {
   return (
     <section
       id={NavData.Skills.page}
-      className="flex h-full items-center justify-center py-12 md:pb-16 md:pt-20 lg:pb-20 lg:pt-24"
+      className="flex h-full items-center justify-center py-12 pt-16 md:pb-16 md:pt-20 lg:pb-20 lg:pt-24"
     >
       <div className="w-full md:w-[448px] lg:w-[775px]">
         <h1 className="mb-12 text-center text-5xl font-light text-gray-text">

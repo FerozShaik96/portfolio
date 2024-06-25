@@ -29,6 +29,7 @@ module.exports = {
         'gray-lan': '#A5A8AA',
         'gray-About': '#E9ECEF',
         'gray-footer': '#F5F5F5',
+        'nav-Col': '#e9ecef',
       },
     },
   },
